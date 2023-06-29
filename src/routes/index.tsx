@@ -7,12 +7,22 @@ export default component$(() => {
 
   return (
     <>
-      <span class="text-2xl ">Buscardor simple</span>
-      <span class="text-9xl">{pokemonId} </span>
-      {/* TODO: Pokemon Image */}
+      <span class="text-2xl">Buscardor simple</span>
+      <span class="text-9xl">{pokemonId}</span>
+      <img
+        src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemonId.value}.png`}
+        alt="pokemonSprite"
+        style={{
+          width: "200px",
+        }}
+      />
       <div class="mt-2">
-        <button class="btn btn-primary mr-2">Anterior</button>
-        <button class="btn btn-primary ">Siguiente</button>
+        <button class="btn btn-primary mr-2" onClick$={() => pokemonId.value--}>
+          Anterior
+        </button>
+        <button class="btn btn-primary" onClick$={() => pokemonId.value++}>
+          Siguiente
+        </button>
       </div>
     </>
   );
